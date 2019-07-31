@@ -1,3 +1,5 @@
+# addition of digits until you get single digit
+
 def DigitOne(n):
     while(int(n)>9):
         string = str(n)
