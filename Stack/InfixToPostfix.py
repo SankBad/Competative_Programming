@@ -1,3 +1,5 @@
+#https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/
+
 def IsOperand(x, precedence):
     for i in precedence:
         if i==x:
