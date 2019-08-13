@@ -1,3 +1,4 @@
+#https://www.interviewbit.com/problems/kth-row-of-pascals-triangle/
 def solve(A):
         SolArr = [[0 for x in range(A+1)] for y in range(A+1)]
         SolArr[1][1]=1
