@@ -4,7 +4,7 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+'''
 class Solution:
     def SearchInt(self, root: 'TreeNode', p: 'TreeNode'):
         if root==None:
@@ -25,8 +25,30 @@ class Solution:
         elif (First==True):
             return self.lowestCommonAncestor(root.left, p, q)
         elif (Second==True):
-            return self.lowestCommonAncestor(root.right, p, q)
+            return self.lowestCommonAncestor(root.right, p, q)'''
+
+### another solution
+
+class Solution:
+        
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if root==None:
+            return None
+        if root==p or root==q:
+            return root
+        leftLCA = self.lowestCommonAncestor(root.left, p, q)
+        rightLCA = self.lowestCommonAncestor(root.right, p, q)
+        if leftLCA and rightLCA:
+            return root
+        if rightLCA==None:
+            return leftLCA
+        else:
+            return rightLCA
             
+            
+            
+        
+        
             
             
         
