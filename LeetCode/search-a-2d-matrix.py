@@ -10,7 +10,7 @@ class Solution:
         while(l<=r):
             mid = l + (r-l)//2
             p = mid//cols
-            q = mid%cols-1
+            q = mid%cols
             if matrix[p][q]==target:
                 return True
             elif matrix[p][q]>target:
@@ -18,3 +18,5 @@ class Solution:
             else:
                 l = mid+1
         return False
+        
+        
