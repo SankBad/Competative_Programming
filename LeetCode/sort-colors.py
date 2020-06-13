@@ -5,29 +5,20 @@ class Solution:
         """
         p = 0
         q = len(nums)-1
+        r = 0
         count = 0
-        for i in nums:
-            if i == 1:
-                count += 1
-        print(count)
-        while(q-p != count-1):
-            print('-----------------------')
-            print(p)
-            print(q)
-            #print(nums[p])
-            if nums[p]==0:
-                #print('a')
+        while(r<=q):
+            if nums[r]==0:
+                temp = nums[p]
+                nums[p] = 0
+                if temp==1:
+                    nums[r] = 1
+                r = r+1
                 p = p+1
-            elif nums[p]==1:
-                #print('b')
-                continue
+            elif nums[r]==1:
+                r = r+1
             else:
-               # print('c')
                 temp = nums[q]
                 nums[q] = 2
-                nums[p] = temp
+                nums[r] = temp
                 q = q -1
-                
-                
-                
-        
