@@ -14,6 +14,5 @@ class Solution:
                 else:
                     l += 1
                     r = rpos
-            val = r-start+1
             outputarr.append(r-start+1)
         return outputarr
