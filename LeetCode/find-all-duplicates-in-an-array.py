@@ -7,10 +7,11 @@ class Solution:
             if currelem==-1:
                 l += 1
             else:
-                temp = nums[currelem]
+                temp = nums[currelem-1]
                 if temp==-1:
                     duplicate.append(currelem)
                     l += 1
                 else:
                     nums[l]=temp
-                    nums[temp]=-1
+                    nums[currelem-1]=-1
+        return set(duplicate)
