@@ -1,18 +1,23 @@
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
-        totallen = len(S)-1
-        l = 0
-        outputarr = []
-        while(l<=totallen):            
-            start = l
-            r = S.rfind(S[start])
-            l = start + 1
-            while(l<=r):
-                rpos = S.rfind(S[l])
-                if rpos<=r:
-                    l += 1
-                else:
-                    l += 1
-                    r = rpos
-            outputarr.append(r-start+1)
-        return outputarr
+        last_occur = {}
+        for i in range(len(S)):
+            last_occur[S[i]] = i
+        
+        ans = []
+        
+        j = 0
+        max_occur = 0
+        for i in range(len(S)):
+            j = j+1
+            curr_occur = last_occur[S[i]]
+            if curr_occur>max_occur:
+                max_occur = curr_occur
+                
+            if max_occur == i:
+                ans.append(j)
+                j = 0
+                curr_occur = 0
+                max_occur = 0
+                
+        return ans
